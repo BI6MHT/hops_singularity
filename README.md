@@ -43,7 +43,7 @@ export C_INCLUDE_PATH=$ASTROSOFT/include:$C_INCLUDE_PATH  # 加入gcc的include�
 export CPLUS_INCLUDE_PATH=$ASTROSOFT/include:$CPLUS_INCLUDE_PATH # 加入g++的include搜索路径
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ASTROSOFT/lib # 把$ASTROSOFT/lib加入到LD_LIBRARY_PATH路径
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/lib64 把/usr/lib和/usr/lib64加入到LD_LIBRARY_PATH路径
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/lib64 # 把/usr/lib和/usr/lib64加入到LD_LIBRARY_PATH路径
 ```
 
 ## 安装fftw
@@ -66,20 +66,20 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$ASTROSOFT/lib/pkgconfig # 把pkgconfig�
 yum install openssh-server -y
 yum install -y xorg-x11-xauth libXt-devel libXext-devel
 
-vim /etc/ssh/sshd_config # 打开配置文件，修改如下
+vim /etc/ssh/sshd_config # 打开配置文件，修改一些参数如下
 
 #AllowAgentForwarding yes
 AllowTcpForwarding yes
 #GatewayPorts no
 X11Forwarding yes
 X11DisplayOffset 10
-X11UseLocalhost no   //网上很多说明这里保持默认不需要修改
+X11UseLocalhost no   #网上很多说明这里保持默认不需要修改
 #PermitTTY yes
 #PrintMotd yes
 #PrintLastLog yes
 #TCPKeepAlive yes
 
-PasswordAuthentication  yes  // 启用口令认证方式，默认是yes，如果是no的话可以改一下
+PasswordAuthentication  yes  #启用口令认证方式，默认是yes，如果是no的话可以改成yes
 ```
 
 ## 安装pgplot的功能
@@ -94,7 +94,7 @@ cp pgplot_source/drivers.list pgplot/
 cd pgplot
 
 vim drivers.list
-编辑drivers.list文档，把下面提到的/NULL,/PS等前面的!去掉，即取消注释：
+# 编辑drivers.list文档，把下面提到的/NULL,/PS等前面的!去掉，即取消注释：
 
 the null device (/NULL)
 PostScript printers (/PS, /VPS, /CPS, and /VCPS),
@@ -106,14 +106,14 @@ You may also wish to include drivers for GIF files (/GIF, /VGIF) or some of the 
 ../pgplot_source/makemake ../pgplot_source linux g77_gcc
 
 vim makefile
-编辑makefile文档，将其中第一页的FCOMPL=g77修改为FCOMPL=gfortran
+# 编辑makefile文档，将其中第一页的FCOMPL=g77修改为FCOMPL=gfortran
 
 make # 对pgplot编译
 make clean
 make cpg  #编译安装
 
 export PGPLOT_DIR=$ASTROSOFT/pgplot
-export PATH=$PATH:$PGPLOT_DIR 把PGPLOT_DIR加入到搜索路径
+export PATH=$PATH:$PGPLOT_DIR # 把PGPLOT_DIR加入到搜索路径
 ```
 
 ## 安装ghostscript(gs)
@@ -133,7 +133,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ASTROSOFT/share/ghostscript/9.25/lib # 
 ## 安装hops
 
 ```
-cd $ASTROSOFT //切回安装基目录
+cd $ASTROSOFT # 切回安装基目录
 yum install lftp
 lftpget ftp://gemini.haystack.mit.edu/pub/hops/hops-3.24-3753.tar.gz
 lftpget ftp://gemini.haystack.mit.edu/pub/hops/hops-3.24-README.txt
@@ -177,7 +177,7 @@ export CPLUS_INCLUDE_PATH=$ASTROSOFT/include:$CPLUS_INCLUDE_PATH
 #-----------------------------------------
 
 
-sh /HOPS_SOFT/HOPS_PATH.sh  //执行sh文件中的内容
+sh /HOPS_SOFT/HOPS_PATH.sh  # 执行sh文件中的内容
 ```
 
 
