@@ -12,7 +12,9 @@
 如果你打算在Singularity容器上安装该软件，方便移植到其他服务器上使用，可以参考Singularity的文档：https://docs.sylabs.io/guides/3.7/user-guide/index.html
 
 按照下面的安装流程打包的的Singularity镜像链接如下，关于使用可参考本文最下面的部分——“在其他主机上使用该镜像”。也建议使用MobaXterm连接远程服务器，再进入该镜像进行使用。远程服务器本身仍需要开启x11图形转发功能，该功能的开启见于本文的“安装ssh和开启x11功能”部分。
+
 Google driver下载链接：https://drive.google.com/file/d/1fBp3TmriXfn-WQ-QcB1p2ueYeeIN_aZk/view?usp=sharing
+
 百度云盘下载链接：链接：https://pan.baidu.com/s/1QOuegr9dD_thrwEdTJWt3w  提取码：vm2w
 
 
@@ -185,8 +187,10 @@ sh /HOPS_SOFT/HOPS_PATH.sh  //执行sh文件中的内容
 sh /HOPS_SOFT/HOPS_PATH.sh # 重新登录后再使用该命令，刚装测试时，不需要该命令
 source /HOPS_SOFT/bin/hops.bash # 加载hops的配置
 fourfit # 输出后会出现fourfit的帮助说明
-```
+
 注：hops的源码文件在/HOPS_SOFT/hops-3.24，编译后的bin文件在/HOPS_SOFT/bin中，include文件在/HOPS_SOFT/include/hops中。
+```
+
 
 ## 打包成singularity镜像（可忽略）
 
